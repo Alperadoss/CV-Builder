@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import helpers from "../helpers";
 import InputField from "./Input-field";
 import PeriodPicker from "./Period-picker";
-import { useState } from "react";
-import { useEffect } from "react";
 
 /** Lists input fields and delete btn for each experience in state */
 function InputFields(props) {
@@ -24,7 +22,7 @@ function InputFields(props) {
   /** Update experience in the array on change */
   function handleOnChange(e) {
     const { name, value } = e.target;
-    props.setData((prevArray) =>
+    props.setData((prevArray) => {
       prevArray.map((xp) => {
         if (xp.id === props.id)
           return {
@@ -32,12 +30,14 @@ function InputFields(props) {
             [name]: value,
           };
         else return xp;
-      })
-    );
+      });
+    });
   }
   /** Delete Experience */
   function handleDeleteXp() {
-    props.setData((prevArray) => prevArray.filter((xp) => props.id != xp.id));
+    props.setData((prevArray) => {
+      prevArray.filter((xp) => props.id != xp.id);
+    });
   }
   /**List fields, period picker and delete btn */
   return (
