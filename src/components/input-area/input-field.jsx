@@ -9,7 +9,7 @@ export default function InputField(props) {
         type={props.type}
         name={props.name}
         value={props.value}
-        className={"text-input " + props.className}
+        className={"text-input "}
         placeholder={props.placeholder}
         onChange={(e) => props.handleOnChange(e)}
       ></input>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import InputArea from "./components/input-area/input-area";
+import InputPage from "./components/input-area/InputPage";
 import Preview from "./components/preview/preview";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="main">
-        <InputArea setData={setData} />
+        <InputPage setData={setData} />
         <Preview data={data} />
       </div>
       <Footer />

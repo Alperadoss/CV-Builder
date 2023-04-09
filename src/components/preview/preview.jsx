@@ -29,8 +29,8 @@ function Header({ data }) {
     </div>
   );
 }
-/* Short Bio Summary Component */
-function ShortBio(props) {
+/* About Me Component */
+function AboutMe(props) {
   return (
     <div className="preview-bio">
       <h3>{props.bio && "Bio"}</h3>

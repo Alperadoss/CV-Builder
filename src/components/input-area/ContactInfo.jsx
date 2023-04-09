@@ -19,38 +19,31 @@ export default function ContactInfo(props) {
           type="text"
           name="fullName"
           label="Full Name"
-          placeholder="e.g. John Smith..."
+          placeholder="John Doe"
           handleOnChange={handleOnChange}
         />
         <InputField
           type="text"
-          name="jobTitle"
-          label="Job Title"
-          placeholder="e.g. Astronaut..."
+          name="emailAddress"
+          label="Your email"
+          placeholder="johndoe@gmail.com"
           handleOnChange={handleOnChange}
         />
       </div>
-      <InputField
-        type="text"
-        name="emailAddress"
-        label="Your email"
-        placeholder="johnsmith@protonmail.com..."
-        handleOnChange={handleOnChange}
-      />
 
       <div className="form-group-row">
         <InputField
           type="tel"
           name="phoneNumber"
           label="Phone Number"
-          placeholder="e.g. +44 7000000..."
+          placeholder="+90 123 45 67"
           handleOnChange={handleOnChange}
         />
         <InputField
           type="text"
           name="linkedin"
           label="LinkedIn Username"
-          placeholder="e.g. johnsmith"
+          placeholder="/johndoe"
           handleOnChange={handleOnChange}
         />
       </div>
@@ -60,14 +53,14 @@ export default function ContactInfo(props) {
           type="text"
           name="website"
           label="Website"
-          placeholder="e.g. www.johnsmith.com..."
+          placeholder="www.johndoe.com..."
           handleOnChange={handleOnChange}
         />
         <InputField
           type="text"
           name="location"
           label="Location"
-          placeholder="e.g. London, Remote..."
+          placeholder="Istanbul"
           handleOnChange={handleOnChange}
         />
       </div>
