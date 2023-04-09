@@ -1,7 +1,7 @@
 import React from "react";
-import helpers from "./../helpers";
-import InputField from "./input-field";
-import PeriodPicker from "./period-picker";
+import helpers from "../helpers";
+import InputField from "./Input-field";
+import PeriodPicker from "./Period-picker";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -24,7 +24,7 @@ function InputFields(props) {
   /** Update experience in the array on change */
   function handleOnChange(e) {
     const { name, value } = e.target;
-    props.updateState((prevArray) =>
+    props.setData((prevArray) =>
       prevArray.map((xp) => {
         if (xp.id === props.id)
           return {
@@ -37,15 +37,13 @@ function InputFields(props) {
   }
   /** Delete Experience */
   function handleDeleteXp() {
-    props.updateState((prevArray) =>
-      prevArray.filter((xp) => props.id != xp.id)
-    );
+    props.setData((prevArray) => prevArray.filter((xp) => props.id != xp.id));
   }
   /**List fields, period picker and delete btn */
   return (
     <div className="experience-input-fields">
       {listFields}
-      <PeriodPicker id={props.id} updateState={props.updateState} />
+      <PeriodPicker id={props.id} setData={props.setData} />
       <button className="del-btn" onClick={handleDeleteXp}>
         Delete {helpers.capitalize(props.mode)}
       </button>
@@ -60,7 +58,7 @@ export default function Experience(props) {
 
   // Update App state (data.experience or data.education) when XP Array changes
   useEffect(() => {
-    props.updateState((prevState) => ({
+    props.setData((prevState) => ({
       ...prevState,
       [props.mode]: allExperiences,
     }));

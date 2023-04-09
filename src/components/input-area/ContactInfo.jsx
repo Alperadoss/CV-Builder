@@ -1,9 +1,9 @@
 import React from "react";
-import InputField from "./input-field";
+import InputField from "./Input-field";
 export default function ContactInfo(props) {
   function handleOnChange(e) {
     const { name, value } = e.target;
-    props.updateState((prevState) => ({
+    props.setData((prevState) => ({
       ...prevState,
       contactInfo: {
         ...prevState.contactInfo,

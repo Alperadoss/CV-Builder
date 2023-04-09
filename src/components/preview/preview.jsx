@@ -44,7 +44,7 @@ function Skills(props) {
   const listSkills = props.data.map((skill) => {
     if (skill.skillName || skill.skillLevel)
       return (
-        <li classList="preview-skill-row">
+        <li key={skill.id}>
           <span className="preview-skill-name">{skill.skillName}</span>
           <span className="preview-skill-value">{skill.skillLevel}</span>
         </li>
@@ -90,7 +90,7 @@ export default function Preview(props) {
       <div className="cv-box">
         <Header data={data} />
         <div className="bio-and-skills">
-          <ShortBio bio={data.shortBio} />
+          <AboutMe bio={data.shortBio} />
           {props.data.skills.length > 0 && <Skills data={data.skills} />}
         </div>
         {props.data.experience.length > 0 && (

@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 export default function PeriodPicker(props) {
   function handleOnChange(e) {
     const { name, value } = e.target;
-    props.updateState((prevArray) =>
+    props.setData((prevArray) =>
       prevArray.map((xp) => {
         if (xp.id === props.id) {
           return {

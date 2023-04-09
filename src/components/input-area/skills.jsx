@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import InputField from "./input-field";
-import helpers from "./../helpers";
+import InputField from "./Input-field";
+import helpers from "../helpers";
 
 /* Renders Two inputs in a row to save skill name and value */
 
@@ -58,7 +58,7 @@ export default function Skills(props) {
 
   /* Update parent's state whenever skills array changes */
   useEffect(() => {
-    props.updateState((prevState) => ({
+    props.setData((prevState) => ({
       ...prevState,
       skills: allSkills,
     }));
