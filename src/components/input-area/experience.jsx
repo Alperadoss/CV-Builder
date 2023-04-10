@@ -23,20 +23,22 @@ function InputFields(props) {
   function handleOnChange(e) {
     const { name, value } = e.target;
     props.setData((prevArray) => {
-      prevArray.map((xp) => {
-        if (xp.id === props.id)
+      return prevArray.map((xp) => {
+        if (xp.id === props.id) {
           return {
             ...xp,
             [name]: value,
           };
-        else return xp;
+        } else {
+          return xp;
+        }
       });
     });
   }
   /** Delete Experience */
   function handleDeleteXp() {
     props.setData((prevArray) => {
-      prevArray.filter((xp) => props.id != xp.id);
+      return prevArray.filter((xp) => xp.id !== props.id);
     });
   }
   /**List fields, period picker and delete btn */
