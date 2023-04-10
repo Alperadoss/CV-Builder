@@ -59,7 +59,7 @@ textarea {
 }
 .text-input:focus,
 textarea:focus {
-  outline: 2px solid var(--primary-orange);
+  outline: 2px solid var(--primary-blue);
 }
 
 .text-input::placeholder,
@@ -81,8 +81,8 @@ textarea::placeholder {
 
 button.btn.secondary-btn {
   background-color: #f3f3f3;
-  border: 1px solid var(--primary-orange);
-  color: var(--primary-orange);
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
   transition: all 0.2s linear;
 }
 button.btn.secondary-btn:hover {
