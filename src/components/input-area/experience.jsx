@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import helpers from "../helpers";
-import InputField from "./Input-field";
-import PeriodPicker from "./Period-picker";
+import React from "react";
+import helpers from "./../helpers";
+import InputField from "./input-field";
+import PeriodPicker from "./period-picker";
+import { useState } from "react";
+import { useEffect } from "react";
 
 /** Lists input fields and delete btn for each experience in state */
 function InputFields(props) {
@@ -22,30 +24,28 @@ function InputFields(props) {
   /** Update experience in the array on change */
   function handleOnChange(e) {
     const { name, value } = e.target;
-    props.setData((prevArray) => {
-      return prevArray.map((xp) => {
-        if (xp.id === props.id) {
+    props.updateState((prevArray) =>
+      prevArray.map((xp) => {
+        if (xp.id === props.id)
           return {
             ...xp,
             [name]: value,
           };
-        } else {
-          return xp;
-        }
-      });
-    });
+        else return xp;
+      })
+    );
   }
   /** Delete Experience */
   function handleDeleteXp() {
-    props.setData((prevArray) => {
-      return prevArray.filter((xp) => xp.id !== props.id);
-    });
+    props.updateState((prevArray) =>
+      prevArray.filter((xp) => props.id != xp.id)
+    );
   }
   /**List fields, period picker and delete btn */
   return (
     <div className="experience-input-fields">
       {listFields}
-      <PeriodPicker id={props.id} setData={props.setData} />
+      <PeriodPicker id={props.id} updateState={props.updateState} />
       <button className="del-btn" onClick={handleDeleteXp}>
         Delete {helpers.capitalize(props.mode)}
       </button>
@@ -60,7 +60,7 @@ export default function Experience(props) {
 
   // Update App state (data.experience or data.education) when XP Array changes
   useEffect(() => {
-    props.setData((prevState) => ({
+    props.updateState((prevState) => ({
       ...prevState,
       [props.mode]: allExperiences,
     }));
