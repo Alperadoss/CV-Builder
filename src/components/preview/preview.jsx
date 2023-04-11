@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { forwardRef } from "react";
 import "./preview.css";
 
 /** Header Component */
@@ -84,10 +83,10 @@ function Experience(props) {
     </div>
   );
 }
-export default function Preview(props) {
+const Preview = React.forwardRef((props, ref) => {
   const data = props.data;
   return (
-    <div className="preview-area">
+    <div className="preview-area" ref={ref}>
       <div className="cv-box">
         <Header data={data} />
         <div className="bio-and-skills">
@@ -103,4 +102,6 @@ export default function Preview(props) {
       </div>
     </div>
   );
-}
+});
+
+export default Preview;
