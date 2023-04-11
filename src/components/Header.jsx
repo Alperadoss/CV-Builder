@@ -3,7 +3,8 @@ import React from "react";
 export default function Header() {
   return (
     <div className="header">
-      <p>A HAEADER WILL COME HERE</p>
+      <h3>CV Builder App</h3>
+      <button id="pdfbtn ">Get PDF</button>
     </div>
   );
 }

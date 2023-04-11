@@ -45,7 +45,7 @@ function SkillInputFields(props) {
         placeholder="e.g. Good, Excellent, Basic..."
         handleOnChange={handleOnChange}
       />
-      <button className="del-btn " onClick={() => handleDelete(props.id)}>
+      <button className="pdf-btn " onClick={() => handleDelete(props.id)}>
         Delete
       </button>
     </div>
