@@ -65,10 +65,10 @@ function Experience(props) {
     return (
       <div className="xp-block">
         <div className="xp-flex-row">
-          <h5 className="xp-title">{xp.jobTitle}</h5>
+          <h6 className="xp-title">{xp.jobTitle}</h6>
+          <p>{xp.company}</p>
         </div>
 
-        <p>{xp.company}</p>
         <p className="preview-xp-time">
           {xp.startDate} - {xp.endDate}
         </p>
