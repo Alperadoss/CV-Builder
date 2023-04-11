@@ -1,3 +1,5 @@
 # CV-Builder
 
-CV builder app you can create your CV and take a pdf output
+CV builder app that generates a structured CV and has a PDF output functionality.
+
+Made with ReactJS
