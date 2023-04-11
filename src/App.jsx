@@ -16,17 +16,16 @@ function App() {
   });
 
   const componentRef = useRef();
-  function handlePrint() {
-    console.log("i work");
-  }
 
   return (
     <div className="App">
-      <Header handlePrint={handlePrint} />
-      <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
-        content={() => componentRef.current}
-      />
+      <div>
+        <Header />
+        <ReactToPrint
+          trigger={() => <button>Print this out!</button>}
+          content={() => componentRef.current}
+        />
+      </div>
       <div className="main">
         <InputPage setData={setData} />
         <Preview ref={componentRef} data={data} />

@@ -17,8 +17,8 @@ function Header({ data }) {
           </a>
         </p>
         <p className="contact-info-lines">
-          <a href={"https://linkedin.com/" + data.contactInfo.linkedin}>
-            {data.contactInfo.linkedin && "/in/" + data.contactInfo.linkedin}
+          <a href={"https://linkedin.com/in/" + data.contactInfo.linkedin}>
+            {data.contactInfo.linkedin && "in/" + data.contactInfo.linkedin}
           </a>
         </p>
         <p className="contact-info-lines">
